@@ -148,7 +148,7 @@ export class BrowserStorage {
   }
 
   // Use for Chrome only.
-  // https://github.com/Authenticator-Extension/Authenticator/issues/412
+  // https://github.com/ZeroOTP-Extension/ZeroOTP/issues/412
   static async clearLogs() {
     const storageLocation = await this.getStorageLocation();
     if (storageLocation === "local") {
@@ -192,6 +192,73 @@ function isKey(key: unknown): key is Key {
 }
 
 export class EntryStorage {
+  private static normalizeType(type: unknown): OTPType {
+    if (typeof type === "number") {
+      return OTPType[type] ? type : OTPType.totp;
+    }
+    if (typeof type === "string") {
+      const normalized = ((OTPType as unknown) as Record<string, number>)[type];
+      if (typeof normalized === "number") {
+        return normalized;
+      }
+    }
+    return OTPType.totp;
+  }
+
+  private static normalizeAlgorithm(algorithm: unknown): OTPAlgorithm {
+    if (typeof algorithm === "number") {
+      return OTPAlgorithm[algorithm] ? algorithm : OTPAlgorithm.SHA1;
+    }
+    if (typeof algorithm === "string") {
+      const normalized = ((OTPAlgorithm as unknown) as Record<string, number>)[
+        algorithm
+      ];
+      if (typeof normalized === "number") {
+        return normalized;
+      }
+    }
+    return OTPAlgorithm.SHA1;
+  }
+
+  private static getDedupFingerprint(entry: {
+    secret?: string | null;
+    issuer?: string;
+    account?: string;
+    type?: unknown;
+    counter?: number;
+    period?: number;
+    digits?: number;
+    algorithm?: unknown;
+  }): string | null {
+    if (!entry.secret) {
+      return null;
+    }
+
+    const secret = entry.secret.trim().toLowerCase();
+    if (!secret) {
+      return null;
+    }
+
+    const issuer = (entry.issuer || "").trim().toLowerCase();
+    const account = (entry.account || "").trim().toLowerCase();
+    const type = this.normalizeType(entry.type);
+    const counter = Number.isFinite(entry.counter) ? entry.counter : 0;
+    const period = Number.isFinite(entry.period) ? entry.period : 30;
+    const digits = Number.isFinite(entry.digits) ? entry.digits : 6;
+    const algorithm = this.normalizeAlgorithm(entry.algorithm);
+
+    return [
+      secret,
+      issuer,
+      account,
+      type,
+      counter,
+      period,
+      digits,
+      algorithm,
+    ].join("|");
+  }
+
   private static getOTPStorageFromEntry(
     entry: OTPEntry,
     unencrypted?: boolean
@@ -455,6 +522,23 @@ export class EntryStorage {
     data: { [hash: string]: RawOTPStorage }
   ) {
     let _data = await BrowserStorage.get();
+    const existingEntries = await this.get();
+    if (encryption.getEncryptionStatus()) {
+      for (const entry of existingEntries) {
+        await entry.applyEncryption(encryption);
+      }
+    }
+
+    const existingFingerprints = new Set<string>();
+    const fingerprintByHash = new Map<string, string>();
+    for (const entry of existingEntries) {
+      const fingerprint = this.getDedupFingerprint(entry);
+      if (fingerprint) {
+        existingFingerprints.add(fingerprint);
+        fingerprintByHash.set(entry.hash, fingerprint);
+      }
+    }
+
     for (const hash of Object.keys(data)) {
       // never trust data import from user
       // data must be decrypted before calling this method
@@ -550,8 +634,21 @@ export class EntryStorage {
         delete data[hash];
       }
 
+      const fingerprint = this.getDedupFingerprint(entryData);
+      const existingFingerprint = fingerprintByHash.get(entryData.hash);
+      if (
+        (fingerprint && existingFingerprints.has(fingerprint)) ||
+        (existingFingerprint && fingerprint === existingFingerprint)
+      ) {
+        continue;
+      }
+
       const entry = new OTPEntry(entryData, encryption);
       _data[entryData.hash] = this.getOTPStorageFromEntry(entry);
+      if (fingerprint) {
+        existingFingerprints.add(fingerprint);
+        fingerprintByHash.set(entryData.hash, fingerprint);
+      }
     }
     _data = this.ensureUniqueIndex(_data);
     await BrowserStorage.set(_data);

@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "导入失败。 如果您要从Google Authenticator迁移数据，请从Google Authenticator重新导出数据，然后重试。",
+    "message": "导入失败。 如果您要从Google ZeroOTP迁移数据，请从Google ZeroOTP重新导出数据，然后重试。",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {

@@ -1,10 +1,10 @@
 {
   "extName": {
-    "message": "Authenticator",
+    "message": "ZeroOTP",
     "description": "Extension Name."
   },
   "extShortName": {
-    "message": "Authenticator",
+    "message": "ZeroOTP",
     "description": "Extension Short Name."
   },
   "extDesc": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Не вдалося виконати імпорт. Якщо ви переносите дані з Google Authenticator, будь ласка, повторно експортуйте свої дані з Google Authenticator і спробуйте знову.",
+    "message": "Не вдалося виконати імпорт. Якщо ви переносите дані з Google ZeroOTP, будь ласка, повторно експортуйте свої дані з Google ZeroOTP і спробуйте знову.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {

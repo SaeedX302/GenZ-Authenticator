@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "فشل الاستيراد. إذا كنت تقوم بترحيل البيانات من Google Authenticator، الرجاء إعادة تصدير بياناتك من Google Authenticator وحاول مرة أخرى.",
+    "message": "فشل الاستيراد. إذا كنت تقوم بترحيل البيانات من Google ZeroOTP، الرجاء إعادة تصدير بياناتك من Google ZeroOTP وحاول مرة أخرى.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -120,10 +120,10 @@
     "description": "Message that user is required to acknowledge before clearing all data."
   },
   "delete_all": {
-    "message": "إعادة تعيين Authenticator"
+    "message": "إعادة تعيين ZeroOTP"
   },
   "delete_all_warning": {
-    "message": "سيؤدي هذا إلى حذف جميع بياناتك وإعادة تعيين Authenticator بالكامل. لن تتمكن من استعادة أي بيانات محذوفة! يجب مراعاة حفظ نسخة احتياطية قبل إعادة تعيين Authenticator."
+    "message": "سيؤدي هذا إلى حذف جميع بياناتك وإعادة تعيين ZeroOTP بالكامل. لن تتمكن من استعادة أي بيانات محذوفة! يجب مراعاة حفظ نسخة احتياطية قبل إعادة تعيين ZeroOTP."
   },
   "security_warning": {
     "message": "هذا الكود الخاص سوف يستخدم لتشفير حسابك.\nلا نقدر على مساعدتك إذا فقدت هذا الكود الخاص.",
@@ -489,7 +489,7 @@
     "message": "يمنح صلاحية الكتابة فقط إلى الحافظة لنسخ الرموز إلى الحافظة عند النقر على الحساب."
   },
   "permission_context_menus": {
-    "message": "يضيف Authenticator إلى القائمة."
+    "message": "يضيف ZeroOTP إلى القائمة."
   },
   "permission_sync_clock": {
     "message": "يسمح بمزامنة الساعة مع جوجل."

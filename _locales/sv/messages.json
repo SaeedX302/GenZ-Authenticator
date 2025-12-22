@@ -1,14 +1,14 @@
 {
   "extName": {
-    "message": "Authenticator",
+    "message": "ZeroOTP",
     "description": "Extension Name."
   },
   "extShortName": {
-    "message": "Authenticator",
+    "message": "ZeroOTP",
     "description": "Extension Short Name."
   },
   "extDesc": {
-    "message": "Authenticator genererar 2-stegs verifieringskoder i din webbläsare.",
+    "message": "ZeroOTP genererar 2-stegs verifieringskoder i din webbläsare.",
     "description": "Extension Description."
   },
   "added": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Import misslyckades. Om du migrerar från Google Authenticator; exportera dina data från Google Authenticator på nytt och försök igen.",
+    "message": "Import misslyckades. Om du migrerar från Google ZeroOTP; exportera dina data från Google ZeroOTP på nytt och försök igen.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -123,7 +123,7 @@
     "message": "Återställ autentiserare"
   },
   "delete_all_warning": {
-    "message": "Det här kommer att radera alla dina data och återställa Authenticator helt. Du kommer inte kunna återskapa några raderade data! Du bör överväga att spara en säkerhetskopia innan du återställer Authenticator."
+    "message": "Det här kommer att radera alla dina data och återställa ZeroOTP helt. Du kommer inte kunna återskapa några raderade data! Du bör överväga att spara en säkerhetskopia innan du återställer ZeroOTP."
   },
   "security_warning": {
     "message": "Detta lösenord kommer att användas för att kryptera dina konton. Ingen kan hjälpa dig om du glömmer lösenordet.",
@@ -489,7 +489,7 @@
     "message": "Ger enbart skrivbehörighet till urklipp för att kopiera koder till urklipp när du klickar på kontot."
   },
   "permission_context_menus": {
-    "message": "Lägger till Authenticator till snabbvalsmenyn."
+    "message": "Lägger till ZeroOTP till snabbvalsmenyn."
   },
   "permission_sync_clock": {
     "message": "Tillåter klocksynkronisering med Google."

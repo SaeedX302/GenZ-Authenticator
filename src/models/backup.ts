@@ -88,7 +88,7 @@ export class Dropbox implements BackupProvider {
             UserSettings.items.dropboxRevoked = true;
             UserSettings.commitItems();
             resolve(
-              "Error: Response was 401. You will be logged out the next time you open Authenticator."
+              "Error: Response was 401. You will be logged out the next time you open ZeroOTP."
             );
           }
           try {
@@ -340,7 +340,7 @@ export class Drive implements BackupProvider {
           };
           xhr.send(
             JSON.stringify({
-              name: "Authenticator Backups",
+              name: "ZeroOTP Backups",
               mimeType: "application/vnd.google-apps.folder",
             })
           );
@@ -452,7 +452,7 @@ export class Drive implements BackupProvider {
             UserSettings.items.driveToken = undefined;
             UserSettings.commitItems();
             resolve(
-              "Error: Response was 401. You will be logged out the next time you open Authenticator."
+              "Error: Response was 401. You will be logged out the next time you open ZeroOTP."
             );
           }
           try {
@@ -655,7 +655,7 @@ export class OneDrive implements BackupProvider {
             UserSettings.items.oneDriveToken = undefined;
             UserSettings.commitItems();
             resolve(
-              "Error: Response was 401. You will be logged out the next time you open Authenticator."
+              "Error: Response was 401. You will be logged out the next time you open ZeroOTP."
             );
           }
           try {

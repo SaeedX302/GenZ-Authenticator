@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "Authenticator\n",
+    "message": "ZeroOTP\n",
     "description": "Extension Name."
   },
   "extShortName": {
@@ -8,7 +8,7 @@
     "description": "Extension Short Name."
   },
   "extDesc": {
-    "message": "Authenticator generuje w przeglądarce kody uwierzytelniania dwuskładnikowego.",
+    "message": "ZeroOTP generuje w przeglądarce kody uwierzytelniania dwuskładnikowego.",
     "description": "Extension Description."
   },
   "added": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Importowanie nie powiodło się. Jeśli przenosisz dane z Google Authenticator, ponownie wyeksportuj swoje dane z Google Authenticator i spróbuj ponownie.",
+    "message": "Importowanie nie powiodło się. Jeśli przenosisz dane z Google ZeroOTP, ponownie wyeksportuj swoje dane z Google ZeroOTP i spróbuj ponownie.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -120,10 +120,10 @@
     "description": "Message that user is required to acknowledge before clearing all data."
   },
   "delete_all": {
-    "message": "Zresetuj dodatek Authenticator"
+    "message": "Zresetuj dodatek ZeroOTP"
   },
   "delete_all_warning": {
-    "message": "Spowoduje to usunięcie wszystkich danych i całkowite zresetowanie dodatku Authenticator. Nie będzie można odzyskać usuniętych danych! Przed zresetowaniem dodatku Authenticator należy rozważyć zapisanie kopii zapasowej."
+    "message": "Spowoduje to usunięcie wszystkich danych i całkowite zresetowanie dodatku ZeroOTP. Nie będzie można odzyskać usuniętych danych! Przed zresetowaniem dodatku ZeroOTP należy rozważyć zapisanie kopii zapasowej."
   },
   "security_warning": {
     "message": "To hasło będzie służyć szyfrowaniu Twoich kont. Nikt ci nie pomoże, jeśli zapomnisz hasła.",
@@ -489,7 +489,7 @@
     "message": "Przyznaje dostęp tylko do zapisu do schowka w celu skopiowania kodów do schowka po kliknięciu konta."
   },
   "permission_context_menus": {
-    "message": "Dodaje dodatek Authenticator do menu kontekstowego."
+    "message": "Dodaje dodatek ZeroOTP do menu kontekstowego."
   },
   "permission_sync_clock": {
     "message": "Umożliwia synchronizację zegara z Google."

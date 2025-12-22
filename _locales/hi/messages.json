@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "आयात विफल. यदि आप Google Authenticator से डेटा माइग्रेट कर रहे हैं, तो कृपया Google प्रमाणक से अपना डेटा पुनः निर्यात करें और पुनः प्रयास करें।",
+    "message": "आयात विफल. यदि आप Google ZeroOTP से डेटा माइग्रेट कर रहे हैं, तो कृपया Google प्रमाणक से अपना डेटा पुनः निर्यात करें और पुनः प्रयास करें।",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {

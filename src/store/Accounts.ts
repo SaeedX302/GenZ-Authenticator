@@ -137,6 +137,33 @@ export class Accounts implements Module {
         loadCodes(state: AccountsState, newCodes: OTPEntryInterface[]) {
           state.entries = newCodes;
         },
+        reorderEntries(state: AccountsState, orderedHashes: string[]) {
+          const entriesByHash = new Map(
+            state.entries.map((entry) => [entry.hash, entry])
+          );
+          const reordered: OTPEntryInterface[] = [];
+
+          for (const hash of orderedHashes) {
+            const entry = entriesByHash.get(hash);
+            if (entry) {
+              reordered.push(entry);
+              entriesByHash.delete(hash);
+            }
+          }
+
+          // Preserve any entries that weren't in the ordered list.
+          for (const entry of entriesByHash.values()) {
+            reordered.push(entry);
+          }
+
+          state.entries = reordered;
+
+          for (let i = 0; i < state.entries.length; i++) {
+            if (state.entries[i].index !== i) {
+              state.entries[i].index = i;
+            }
+          }
+        },
         moveCode(state: AccountsState, opts: { from: number; to: number }) {
           state.entries.splice(
             opts.to,
@@ -537,7 +564,7 @@ export class Accounts implements Module {
 
             await state.dispatch("updateEntries");
 
-            // https://github.com/Authenticator-Extension/Authenticator/issues/412
+            // https://github.com/ZeroOTP-Extension/ZeroOTP/issues/412
             if (isChromium) {
               await BrowserStorage.clearLogs();
             }

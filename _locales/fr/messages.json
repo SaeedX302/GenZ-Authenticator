@@ -1,14 +1,14 @@
 {
   "extName": {
-    "message": "Authenticator",
+    "message": "ZeroOTP",
     "description": "Extension Name."
   },
   "extShortName": {
-    "message": "Authenticator",
+    "message": "ZeroOTP",
     "description": "Extension Short Name."
   },
   "extDesc": {
-    "message": "Authenticator génère des codes d'authentification à deux facteurs dans votre navigateur.",
+    "message": "ZeroOTP génère des codes d'authentification à deux facteurs dans votre navigateur.",
     "description": "Extension Description."
   },
   "added": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Échec de l'importation. Si vous migrez des données depuis Google Authenticator, veuillez ré-exporter vos données depuis Google Authenticator et réessayer.",
+    "message": "Échec de l'importation. Si vous migrez des données depuis Google ZeroOTP, veuillez ré-exporter vos données depuis Google ZeroOTP et réessayer.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -489,7 +489,7 @@
     "message": "Donne un accès en écriture seule au presse-papiers pour copier des codes dans le presse-papiers lorsque vous cliquez sur le compte."
   },
   "permission_context_menus": {
-    "message": "Ajoute Authenticator au menu contextuel."
+    "message": "Ajoute ZeroOTP au menu contextuel."
   },
   "permission_sync_clock": {
     "message": "Autoriser la synchronisation de l'horloge avec Google."

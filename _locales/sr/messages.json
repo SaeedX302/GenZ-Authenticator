@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Увоз није успео. Ако мигрирате податке из Google Authenticatorа, молимо поновно извезите и покушајте опет.",
+    "message": "Увоз није успео. Ако мигрирате податке из Google ZeroOTPа, молимо поновно извезите и покушајте опет.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -489,7 +489,7 @@
     "message": "Grants write-only access to the clipboard to copy codes to clipboard when you click on the account."
   },
   "permission_context_menus": {
-    "message": "Adds Authenticator to context menu."
+    "message": "Adds ZeroOTP to context menu."
   },
   "permission_sync_clock": {
     "message": "Allows clock sync with Google."

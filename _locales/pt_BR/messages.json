@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Falha na importação. Se você está migrando dados do Google Authenticator, por favor re-exporte seus dados do Google Authenticator e tente novamente.",
+    "message": "Falha na importação. Se você está migrando dados do Google ZeroOTP, por favor re-exporte seus dados do Google ZeroOTP e tente novamente.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {

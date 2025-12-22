@@ -1,6 +1,6 @@
 contact_links:
   - name: Feature Request
-    url: https://github.com/Authenticator-Extension/Authenticator/discussions/new
+    url: https://github.com/ZeroOTP-Extension/ZeroOTP/discussions/new
     about: Please request features here.
   - name: Translation Issues
     url: https://crowdin.com/project/authenticator-firefox

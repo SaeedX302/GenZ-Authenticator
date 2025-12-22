@@ -188,10 +188,12 @@ export default Vue.extend({
         dragIndex: number;
         dropIndex: number;
       }) => {
-        this.$store.commit("accounts/moveCode", {
-          from: dragIndex,
-          to: dropIndex,
-        });
+        const reordered = this.entries.slice();
+        reordered.splice(dropIndex, 0, reordered.splice(dragIndex, 1)[0]);
+        this.$store.commit(
+          "accounts/reorderEntries",
+          reordered.map((entry) => entry.hash)
+        );
         await EntryStorage.set(this.$store.state.accounts.entries);
       }
     );

@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Η εισαγωγή απέτυχε. Αν μεταφέρετε δεδομένα από το Google Authenticator, επανεξάγετέ τα και προσπαθήστε ξανά.",
+    "message": "Η εισαγωγή απέτυχε. Αν μεταφέρετε δεδομένα από το Google ZeroOTP, επανεξάγετέ τα και προσπαθήστε ξανά.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {

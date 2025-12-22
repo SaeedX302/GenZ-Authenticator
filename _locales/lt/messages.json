@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Importuoti nepavyko. Jei migruojate duomenis iš \"Google Authenticator\", iš naujo eksportuokite duomenis iš \"Google Authenticator\" ir bandykite dar kartą.",
+    "message": "Importuoti nepavyko. Jei migruojate duomenis iš \"Google ZeroOTP\", iš naujo eksportuokite duomenis iš \"Google ZeroOTP\" ir bandykite dar kartą.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {

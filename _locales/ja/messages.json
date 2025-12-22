@@ -1,14 +1,14 @@
 {
   "extName": {
-    "message": "Authenticator",
+    "message": "ZeroOTP",
     "description": "Extension Name."
   },
   "extShortName": {
-    "message": "Authenticator",
+    "message": "ZeroOTP",
     "description": "Extension Short Name."
   },
   "extDesc": {
-    "message": "Authenticator はお使いのブラウザーで2段階認証コードを生成します。",
+    "message": "ZeroOTP はお使いのブラウザーで2段階認証コードを生成します。",
     "description": "Extension Description."
   },
   "added": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "インポートに失敗しました。Google Authenticator からデータを移行する場合は、データを再度エクスポートしてやり直してみてください。",
+    "message": "インポートに失敗しました。Google ZeroOTP からデータを移行する場合は、データを再度エクスポートしてやり直してみてください。",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {

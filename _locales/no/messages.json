@@ -4,11 +4,11 @@
     "description": "Extension Name."
   },
   "extShortName": {
-    "message": "Authenticator",
+    "message": "ZeroOTP",
     "description": "Extension Short Name."
   },
   "extDesc": {
-    "message": "Authenticator genererer to-faktor autentiseringskoder i nettleseren din.",
+    "message": "ZeroOTP genererer to-faktor autentiseringskoder i nettleseren din.",
     "description": "Extension Description."
   },
   "added": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Import mislyktes. Hvis du migrerer data fra Google Authenticator, vennligst eksporter dataene fra Google Authenticator og prøv på nytt.",
+    "message": "Import mislyktes. Hvis du migrerer data fra Google ZeroOTP, vennligst eksporter dataene fra Google ZeroOTP og prøv på nytt.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {

@@ -1,14 +1,14 @@
 {
   "extName": {
-    "message": "Authenticator",
+    "message": "ZeroOTP",
     "description": "Extension Name."
   },
   "extShortName": {
-    "message": "Authenticator",
+    "message": "ZeroOTP",
     "description": "Extension Short Name."
   },
   "extDesc": {
-    "message": "Authenticator generuje kódy dvoufázového ověření ve Vašem prohlížeči.",
+    "message": "ZeroOTP generuje kódy dvoufázového ověření ve Vašem prohlížeči.",
     "description": "Extension Description."
   },
   "added": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Import se nezdařil. Pokud migrujete data z Google Authenticator, prosím znovu exportujte svá data z Google Authenticator a zkuste to znovu.",
+    "message": "Import se nezdařil. Pokud migrujete data z Google ZeroOTP, prosím znovu exportujte svá data z Google ZeroOTP a zkuste to znovu.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -489,7 +489,7 @@
     "message": "Umožňuje přístup do schránky pouze pro zápis a kopírování kódů do schránky po kliknutí na účet."
   },
   "permission_context_menus": {
-    "message": "Přidá Authenticator do kontextové nabídky."
+    "message": "Přidá ZeroOTP do kontextové nabídky."
   },
   "permission_sync_clock": {
     "message": "Umožnit synchronizaci hodin s Google."

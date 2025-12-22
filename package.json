@@ -1,7 +1,7 @@
 {
-  "name": "authenticator-extension",
-  "version": "0.1.0",
-  "description": "Authenticator generates 2-Step Verification codes in your browser.",
+  "name": "zerootp-extension",
+  "version": "0.1.1",
+  "description": "改自 ZeroOTP",
   "scripts": {
     "compile": "bash scripts/build.sh firefox",
     "dev:chrome": "npm run pretest && webpack --config ./webpack.watch.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Authenticator-Extension/Authenticator.git"
+    "url": "git+https://github.com/ZeroOTP-Extension/ZeroOTP.git"
   },
-  "author": "Authenticator Extension",
+  "author": "ZeroOTP Extension",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Authenticator-Extension/Authenticator/issues"
+    "url": "https://github.com/ZeroOTP-Extension/ZeroOTP/issues"
   },
-  "homepage": "https://github.com/Authenticator-Extension/Authenticator#readme",
+  "homepage": "https://github.com/ZeroOTP-Extension/ZeroOTP#readme",
   "devDependencies": {
     "@types/argon2-browser": "^1.18.1",
     "@types/chai": "^4.2.14",
