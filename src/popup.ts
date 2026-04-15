@@ -34,8 +34,10 @@ async function init() {
   await migrateLocalStorageToBrowserStorage();
   await UserSettings.updateItems();
 
-  // Add globals
-  Vue.prototype.i18n = await loadI18nMessages();
+  // Add globals — use user-selected language if set
+  Vue.prototype.i18n = await loadI18nMessages(
+    UserSettings.items.language || undefined
+  );
 
   // Load modules
   Vue.use(Vuex);

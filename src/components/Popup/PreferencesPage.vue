@@ -13,6 +13,15 @@
       <option value="flat">{{ i18n.theme_flat }}</option>
     </a-select-input>
     <a-select-input
+      :label="i18n.language"
+      v-model="language"
+      style="margin-left: 10px"
+    >
+      <option v-for="loc in locales" :key="loc.code" :value="loc.code">
+        {{ loc.name }}
+      </option>
+    </a-select-input>
+    <a-select-input
       :label="i18n.scale"
       v-model="zoom"
       style="margin-left: 10px"
@@ -64,9 +73,19 @@
 import Vue from "vue";
 import { isFirefox, isSafari } from "../../browser";
 import { UserSettings } from "../../models/settings";
+import { AVAILABLE_LOCALES } from "../../store/i18n";
 
 export default Vue.extend({
   computed: {
+    language: {
+      get(): string {
+        return this.$store.state.menu.language;
+      },
+      set(language: string) {
+        this.$store.commit("menu/setLanguage", language);
+        this.$store.commit("notification/alert", this.i18n.language_changed);
+      },
+    },
     zoom: {
       get(): number {
         return this.$store.state.menu.zoom;
@@ -150,6 +169,7 @@ export default Vue.extend({
   data() {
     return {
       newStorageLocation: "",
+      locales: AVAILABLE_LOCALES,
     };
   },
   created() {

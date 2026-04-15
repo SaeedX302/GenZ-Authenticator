@@ -13,6 +13,16 @@ A Safari edition of ZeroOTP is available on the App Store. We do not provide off
 
 [<img width="150" alt="Download on the App Store" src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"/>](https://apps.apple.com/us/app/authen/id1602945200?mt=12)
 
+## Features
+
+- **Browser-based 2FA** — Generate TOTP/HOTP codes directly in your browser
+- **QR Code Scanning** — Import accounts by scanning QR codes from any webpage
+- **E2E Encrypted Cloud Sync** — Sync OTP entries across multiple browsers via Google Drive, Dropbox, or OneDrive. All data is encrypted locally before upload using AES-256-GCM with Argon2id key derivation. Cloud providers never see your secrets. See [SECURITY.md](SECURITY.md) for details.
+- **Multiple Algorithms** — SHA-1, SHA-256, SHA-512, GOST R 34.11-2012
+- **Battle.net & Steam Guard** — Native support for gaming platform authenticators
+- **Encrypted Local Storage** — Optional master password protection with Argon2id + AES encryption
+- **Import/Export** — JSON backup, otpauth:// URI, Google Authenticator migration
+
 ## Build Setup
 
 ``` bash

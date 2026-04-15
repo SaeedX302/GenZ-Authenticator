@@ -3,6 +3,9 @@ import { Encryption } from "./encryption";
 import { UserSettings } from "./settings";
 import { EntryStorage } from "./storage";
 
+/** Fixed filename for the sync manifest in cloud storage */
+const SYNC_FILENAME = "zerootp-sync.enc";
+
 export class Dropbox implements BackupProvider {
   private async getToken() {
     await UserSettings.updateItems();
@@ -107,6 +110,81 @@ export class Dropbox implements BackupProvider {
         return;
       };
       xhr.send(null);
+    });
+  }
+
+  async uploadSync(payload: SyncPayload): Promise<boolean> {
+    const token = await this.getToken();
+    if (!token) return false;
+
+    const url = "https://content.dropboxapi.com/2/files/upload";
+    const apiArg = {
+      path: `/${SYNC_FILENAME}`,
+      mode: "overwrite",
+      autorename: false,
+    };
+
+    return new Promise((resolve, reject) => {
+      try {
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", url);
+        xhr.setRequestHeader("Authorization", "Bearer " + token);
+        xhr.setRequestHeader("Content-type", "application/octet-stream");
+        xhr.setRequestHeader("Dropbox-API-Arg", JSON.stringify(apiArg));
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 401) {
+              UserSettings.items.dropboxToken = undefined;
+              UserSettings.items.dropboxRevoked = true;
+              UserSettings.commitItems();
+              return resolve(false);
+            }
+            try {
+              const res = JSON.parse(xhr.responseText);
+              resolve(Boolean(res.name));
+            } catch (error) {
+              reject(error as Error);
+            }
+          }
+        };
+        xhr.send(JSON.stringify(payload));
+      } catch (error) {
+        reject(error as Error);
+      }
+    });
+  }
+
+  async downloadSync(): Promise<SyncPayload | null> {
+    const token = await this.getToken();
+    if (!token) return null;
+
+    const url = "https://content.dropboxapi.com/2/files/download";
+    const apiArg = { path: `/${SYNC_FILENAME}` };
+
+    return new Promise((resolve) => {
+      try {
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", url);
+        xhr.setRequestHeader("Authorization", "Bearer " + token);
+        xhr.setRequestHeader("Dropbox-API-Arg", JSON.stringify(apiArg));
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              try {
+                resolve(JSON.parse(xhr.responseText) as SyncPayload);
+              } catch {
+                resolve(null);
+              }
+            } else {
+              // 404 or error — no sync file exists yet
+              resolve(null);
+            }
+          }
+        };
+        xhr.send();
+      } catch {
+        resolve(null);
+      }
     });
   }
 }
@@ -473,6 +551,168 @@ export class Drive implements BackupProvider {
       xhr.send();
     });
   }
+
+  /**
+   * Find or create the sync file in the ZeroOTP Backups folder.
+   * Returns the file ID if found, or null.
+   */
+  private async findSyncFile(): Promise<string | null> {
+    const token = await this.getToken();
+    if (!token) return null;
+
+    const folderId = await this.getFolder();
+    if (!folderId) return null;
+
+    const query = encodeURIComponent(
+      `name='${SYNC_FILENAME}' and '${folderId}' in parents and trashed=false`
+    );
+
+    return new Promise((resolve) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open(
+        "GET",
+        `https://www.googleapis.com/drive/v3/files?q=${query}&fields=files(id)`
+      );
+      xhr.setRequestHeader("Authorization", "Bearer " + token);
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+          try {
+            const res = JSON.parse(xhr.responseText);
+            if (res.files && res.files.length > 0) {
+              resolve(res.files[0].id);
+            } else {
+              resolve(null);
+            }
+          } catch {
+            resolve(null);
+          }
+        }
+      };
+      xhr.send();
+    });
+  }
+
+  async uploadSync(payload: SyncPayload): Promise<boolean> {
+    const token = await this.getToken();
+    if (!token) return false;
+
+    const body = JSON.stringify(payload);
+    const existingFileId = await this.findSyncFile();
+
+    if (existingFileId) {
+      // Update existing file
+      return new Promise((resolve, reject) => {
+        try {
+          const xhr = new XMLHttpRequest();
+          xhr.open(
+            "PATCH",
+            `https://www.googleapis.com/upload/drive/v3/files/${existingFileId}?uploadType=media`
+          );
+          xhr.setRequestHeader("Authorization", "Bearer " + token);
+          xhr.setRequestHeader("Content-type", "application/octet-stream");
+          xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4) {
+              if (xhr.status === 401) {
+                UserSettings.items.driveToken = undefined;
+                UserSettings.commitItems();
+                return resolve(false);
+              }
+              try {
+                const res = JSON.parse(xhr.responseText);
+                resolve(!res.error);
+              } catch (error) {
+                reject(error as Error);
+              }
+            }
+          };
+          xhr.send(body);
+        } catch (error) {
+          reject(error as Error);
+        }
+      });
+    }
+
+    // Create new file in the backup folder
+    const folderId = await this.getFolder();
+    if (!folderId) return false;
+
+    return new Promise((resolve, reject) => {
+      try {
+        const xhr = new XMLHttpRequest();
+        xhr.open(
+          "POST",
+          "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart"
+        );
+        xhr.setRequestHeader("Authorization", "Bearer " + token);
+        xhr.setRequestHeader(
+          "Content-type",
+          "multipart/related; boundary=segment_marker"
+        );
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 401) {
+              UserSettings.items.driveToken = undefined;
+              UserSettings.commitItems();
+              return resolve(false);
+            }
+            try {
+              const res = JSON.parse(xhr.responseText);
+              resolve(!res.error);
+            } catch (error) {
+              reject(error as Error);
+            }
+          }
+        };
+        const parts = [
+          "--segment_marker",
+          "Content-Type: application/json; charset=UTF-8",
+          "",
+          JSON.stringify({ name: SYNC_FILENAME, parents: [folderId] }),
+          "",
+          "--segment_marker",
+          "Content-Type: application/octet-stream",
+          "",
+          body,
+          "--segment_marker--",
+        ];
+        xhr.send(parts.join("\n"));
+      } catch (error) {
+        reject(error as Error);
+      }
+    });
+  }
+
+  async downloadSync(): Promise<SyncPayload | null> {
+    const token = await this.getToken();
+    if (!token) return null;
+
+    const fileId = await this.findSyncFile();
+    if (!fileId) return null;
+
+    return new Promise((resolve) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open(
+        "GET",
+        `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media`
+      );
+      xhr.setRequestHeader("Authorization", "Bearer " + token);
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            try {
+              resolve(JSON.parse(xhr.responseText) as SyncPayload);
+            } catch {
+              resolve(null);
+            }
+          } else {
+            resolve(null);
+          }
+        }
+      };
+      xhr.send();
+    });
+  }
 }
 
 export class OneDrive implements BackupProvider {
@@ -672,6 +912,68 @@ export class OneDrive implements BackupProvider {
           }
         }
         return;
+      };
+      xhr.send();
+    });
+  }
+
+  async uploadSync(payload: SyncPayload): Promise<boolean> {
+    const token = await this.getToken();
+    if (!token) return false;
+
+    return new Promise((resolve, reject) => {
+      try {
+        const xhr = new XMLHttpRequest();
+        xhr.open(
+          "PUT",
+          `https://graph.microsoft.com/v1.0/me/drive/special/approot:/${SYNC_FILENAME}:/content`
+        );
+        xhr.setRequestHeader("Authorization", "Bearer " + token);
+        xhr.setRequestHeader("Content-type", "application/octet-stream");
+        xhr.onreadystatechange = () => {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 401) {
+              UserSettings.removeItem("oneDriveToken");
+              return resolve(false);
+            }
+            try {
+              const res = JSON.parse(xhr.responseText);
+              resolve(!res.error);
+            } catch (error) {
+              reject(error as Error);
+            }
+          }
+        };
+        xhr.send(JSON.stringify(payload));
+      } catch (error) {
+        reject(error as Error);
+      }
+    });
+  }
+
+  async downloadSync(): Promise<SyncPayload | null> {
+    const token = await this.getToken();
+    if (!token) return null;
+
+    return new Promise((resolve) => {
+      const xhr = new XMLHttpRequest();
+      xhr.open(
+        "GET",
+        `https://graph.microsoft.com/v1.0/me/drive/special/approot:/${SYNC_FILENAME}:/content`
+      );
+      xhr.setRequestHeader("Authorization", "Bearer " + token);
+      xhr.onreadystatechange = () => {
+        if (xhr.readyState === 4) {
+          if (xhr.status === 200) {
+            try {
+              resolve(JSON.parse(xhr.responseText) as SyncPayload);
+            } catch {
+              resolve(null);
+            }
+          } else {
+            resolve(null);
+          }
+        }
       };
       xhr.send();
     });

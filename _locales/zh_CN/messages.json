@@ -520,5 +520,13 @@
   },
   "activate_auto_filter": {
     "message": "Warning: Smart filter loosely matches the domain name to an account. Always verify that you are on the correct website before entering a code!"
+  },
+  "language": {
+    "message": "语言",
+    "description": "Language setting label"
+  },
+  "language_changed": {
+    "message": "语言已更改，请重新打开扩展以生效。",
+    "description": "Notification after language change"
   }
 }

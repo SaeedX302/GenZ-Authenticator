@@ -1,6 +1,6 @@
 {
   "name": "zerootp-extension",
-  "version": "0.1.1",
+  "version": "0.3.0",
   "description": "改自 ZeroOTP",
   "scripts": {
     "compile": "bash scripts/build.sh firefox",

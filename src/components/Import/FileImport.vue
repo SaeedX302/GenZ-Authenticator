@@ -28,6 +28,22 @@ import {
 } from "../../import";
 import { EntryStorage } from "../../models/storage";
 import { Encryption } from "../../models/encryption";
+import { SyncEncryption } from "../../models/sync-encryption";
+
+/**
+ * Detect if parsed JSON is a SyncPayload (v1 E2E encrypted format).
+ */
+function isSyncPayload(data: unknown): data is SyncPayload {
+  return (
+    typeof data === "object" &&
+    data !== null &&
+    "v" in data &&
+    "salt" in data &&
+    "nonce" in data &&
+    "data" in data &&
+    (data as SyncPayload).v === 1
+  );
+}
 
 export default Vue.extend({
   data: function () {
@@ -60,7 +76,52 @@ export default Vue.extend({
           let failedCount = 0;
           let succeededCount = 0;
           try {
-            importData = JSON.parse(reader.result as string);
+            const parsed = JSON.parse(reader.result as string);
+
+            // Detect new SyncPayload format (E2E encrypted)
+            if (isSyncPayload(parsed)) {
+              const password: string | null = await this.getOldPassphrase();
+              if (!password) {
+                alert(this.i18n.migration_fail);
+                return;
+              }
+              try {
+                const syncEnc = new SyncEncryption();
+                const decryptedJson = await syncEnc.decrypt(parsed, password);
+                const manifest = JSON.parse(decryptedJson);
+                // SyncManifest has an "entries" wrapper
+                const entries = manifest.entries || manifest;
+                for (const hash of Object.keys(entries)) {
+                  const entry = entries[hash];
+                  // Skip tombstones
+                  if (entry.sync?.deleted) continue;
+                  // Strip sync metadata
+                  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                  const { sync, ...raw } = entry;
+                  decryptedFileData[hash] = raw;
+                }
+                if (Object.keys(decryptedFileData).length) {
+                  await EntryStorage.import(
+                    this.$encryption as Encryption,
+                    decryptedFileData
+                  );
+                  alert(this.i18n.updateSuccess);
+                  if (closeWindow) window.close();
+                } else {
+                  alert(this.i18n.migration_fail);
+                }
+                return;
+              } catch (syncErr) {
+                console.warn("SyncPayload decrypt failed:", syncErr);
+                alert(this.i18n.migration_fail);
+                this.getFilePassphrase = false;
+                this.importFilePassphrase = "";
+                return;
+              }
+            }
+
+            // Legacy JSON format
+            importData = parsed;
             succeededCount = Object.keys(importData).filter(
               (key) => ["key", "enc", "hash"].indexOf(key) === -1
             ).length;

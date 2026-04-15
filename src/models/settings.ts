@@ -22,12 +22,26 @@ interface UserSettingsData {
   oneDriveToken?: string;
   storageLocation?: StorageLocation;
 
+  // cloud sync settings (local-only — tokens must not leave this device)
+  /** Which cloud provider is used for sync: "drive" | "dropbox" | "onedrive" */
+  syncProvider?: string;
+  /** Whether cloud sync is enabled */
+  syncEnabled?: boolean;
+  /** Sync interval in minutes (default 5) */
+  syncInterval?: number;
+  /** ISO-8601 timestamp of last successful sync */
+  lastSyncAt?: string;
+  /** Cached SyncManifest JSON for diff calculation (local-only) */
+  lastSyncManifest?: string;
+
   // syncable settings
   advisorIgnoreList?: string[];
   autofill?: boolean;
   autolock?: number;
   enableContextMenu?: boolean;
   encodedPhrase?: string;
+  /** User-selected UI language override (e.g. "en", "zh_CN"). Empty = browser default. */
+  language?: string;
   smartFilter?: boolean;
   theme?: string;
   zoom?: number;
@@ -51,6 +65,11 @@ const LocalUserSettingsDataKeys = [
   "oneDriveRefreshToken",
   "oneDriveToken",
   "storageLocation",
+  "syncProvider",
+  "syncEnabled",
+  "syncInterval",
+  "lastSyncAt",
+  "lastSyncManifest",
 ];
 
 export class UserSettings {
