@@ -14,3 +14,13 @@ view/licenses.html
 ./test
 scripts/authenticator-build-key
 scripts/test-runner.js
+# ---- agent / workspace / build cache（生产分支不跟踪；git-wip 工作流据此剔除）----
+.planning/
+.qwen/
+.wrangler/
+.codex/
+.claude/
+.gemini/
+.agents/
+.qwen-session
+*.tsbuildinfo
