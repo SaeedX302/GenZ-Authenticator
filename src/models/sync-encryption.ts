@@ -4,7 +4,7 @@
  * Security chain:
  *   Master Password
  *     → Argon2id(password, salt)  → masterKey (256-bit)
- *     → HKDF(masterKey, "zerootp-sync-v1") → syncKey (AES-256)
+ *     → HKDF(masterKey, "GenZ-Authenticator-sync-v1") → syncKey (AES-256)
  *     → AES-256-GCM(syncKey, nonce, plaintext) → SyncPayload
  *
  * Uses Web Crypto API exclusively (no CryptoJS dependency).
@@ -23,7 +23,7 @@ const NONCE_LENGTH = 12;
 /** AES key length in bits */
 const AES_KEY_BITS = 256;
 /** HKDF info string — change this to rotate key domains */
-const HKDF_INFO = "zerootp-sync-v1";
+const HKDF_INFO = "GenZ-Authenticator-sync-v1";
 /** Current payload format version */
 const PAYLOAD_VERSION = 1;
 

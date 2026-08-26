@@ -6,7 +6,7 @@ We support the latest versions published on the Chrome, Firefox, and Edge extens
 
 ## Reporting a Vulnerability
 
-Report potential vulnerabilities privately via [this form](https://github.com/ZeroOTP-Extension/ZeroOTP/security/advisories/new).
+Report potential vulnerabilities privately via [this form](https://github.com/GenZ-Authenticator/GenZ-Authenticator/security/advisories/new).
 Where appropriate, include a proof-of-concept and reproduction steps.
 We strive to provide an initial response within five days, but as this is a volunteer-run project, we make no guarantees.
 
@@ -14,7 +14,7 @@ We strive to provide an initial response within five days, but as this is a volu
 
 ## Encryption Architecture (v8.2.0+)
 
-ZeroOTP uses two independent encryption subsystems：
+GenZ-Authenticator uses two independent encryption subsystems：
 
 ### 1. Local Entry Encryption (Legacy)
 
@@ -40,7 +40,7 @@ Master Password (user input)
 Argon2id(password, random_salt_16B)  -->  master_key (256-bit)
     |
     v
-HKDF-SHA256(master_key, salt, "zerootp-sync-v1")  -->  AES key (256-bit)
+HKDF-SHA256(master_key, salt, "GenZ-Authenticator-sync-v1")  -->  AES key (256-bit)
     |
     v
 AES-256-GCM(key, random_nonce_12B, plaintext)  -->  ciphertext + authTag

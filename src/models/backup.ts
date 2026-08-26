@@ -4,7 +4,7 @@ import { UserSettings } from "./settings";
 import { EntryStorage } from "./storage";
 
 /** Fixed filename for the sync manifest in cloud storage */
-const SYNC_FILENAME = "zerootp-sync.enc";
+const SYNC_FILENAME = "GenZ-Authenticator-sync.enc";
 
 export class Dropbox implements BackupProvider {
   private async getToken() {
@@ -91,7 +91,7 @@ export class Dropbox implements BackupProvider {
             UserSettings.items.dropboxRevoked = true;
             UserSettings.commitItems();
             resolve(
-              "Error: Response was 401. You will be logged out the next time you open ZeroOTP."
+              "Error: Response was 401. You will be logged out the next time you open GenZ-Authenticator."
             );
           }
           try {
@@ -418,7 +418,7 @@ export class Drive implements BackupProvider {
           };
           xhr.send(
             JSON.stringify({
-              name: "ZeroOTP Backups",
+              name: "GenZ-Authenticator Backups",
               mimeType: "application/vnd.google-apps.folder",
             })
           );
@@ -530,7 +530,7 @@ export class Drive implements BackupProvider {
             UserSettings.items.driveToken = undefined;
             UserSettings.commitItems();
             resolve(
-              "Error: Response was 401. You will be logged out the next time you open ZeroOTP."
+              "Error: Response was 401. You will be logged out the next time you open GenZ-Authenticator."
             );
           }
           try {
@@ -553,7 +553,7 @@ export class Drive implements BackupProvider {
   }
 
   /**
-   * Find or create the sync file in the ZeroOTP Backups folder.
+   * Find or create the sync file in the GenZ-Authenticator Backups folder.
    * Returns the file ID if found, or null.
    */
   private async findSyncFile(): Promise<string | null> {
@@ -895,7 +895,7 @@ export class OneDrive implements BackupProvider {
             UserSettings.items.oneDriveToken = undefined;
             UserSettings.commitItems();
             resolve(
-              "Error: Response was 401. You will be logged out the next time you open ZeroOTP."
+              "Error: Response was 401. You will be logged out the next time you open GenZ-Authenticator."
             );
           }
           try {

@@ -1,14 +1,14 @@
 {
   "extName": {
-    "message": "ZeroOTP",
+    "message": "GenZ-Authenticator",
     "description": "Extension Name."
   },
   "extShortName": {
-    "message": "ZeroOTP",
+    "message": "GenZ-Authenticator",
     "description": "Extension Short Name."
   },
   "extDesc": {
-    "message": "ZeroOTP generates two-factor authentication codes in your browser.",
+    "message": "GenZ-Authenticator generates two-factor authentication codes in your browser.",
     "description": "Extension Description."
   },
   "added": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Import failed. If you are migrating data from Google ZeroOTP, please re-export your data from Google ZeroOTP and try again.",
+    "message": "Import failed. If you are migrating data from Google GenZ-Authenticator, please re-export your data from Google GenZ-Authenticator and try again.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -120,10 +120,10 @@
     "description": "Message that user is required to acknowledge before clearing all data."
   },
   "delete_all": {
-    "message": "Reset ZeroOTP"
+    "message": "Reset GenZ-Authenticator"
   },
   "delete_all_warning": {
-    "message": "This will delete all of your data and completely reset ZeroOTP. You will not be able to recover any deleted data! You should consider saving a backup before resetting ZeroOTP."
+    "message": "This will delete all of your data and completely reset GenZ-Authenticator. You will not be able to recover any deleted data! You should consider saving a backup before resetting GenZ-Authenticator."
   },
   "security_warning": {
     "message": "This password will be used to encrypt your accounts. No one can help you if you forget the password.",
@@ -489,7 +489,7 @@
     "message": "Grants write-only access to the clipboard to copy codes to clipboard when you click on the account."
   },
   "permission_context_menus": {
-    "message": "Adds ZeroOTP to context menu."
+    "message": "Adds GenZ-Authenticator to context menu."
   },
   "permission_sync_clock": {
     "message": "Allows clock sync with Google."

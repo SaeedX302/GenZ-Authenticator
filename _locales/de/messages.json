@@ -4,11 +4,11 @@
     "description": "Extension Name."
   },
   "extShortName": {
-    "message": "ZeroOTP",
+    "message": "GenZ-Authenticator",
     "description": "Extension Short Name."
   },
   "extDesc": {
-    "message": "ZeroOTP erzeugt Zwei-Faktor-Authentifizierungscodes in Ihrem Browser.",
+    "message": "GenZ-Authenticator erzeugt Zwei-Faktor-Authentifizierungscodes in Ihrem Browser.",
     "description": "Extension Description."
   },
   "added": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Import fehlgeschlagen. Wenn Sie Daten von Google ZeroOTP migrieren, exportieren Sie bitte Ihre Daten erneut aus dem Google ZeroOTP und versuchen Sie es erneut.",
+    "message": "Import fehlgeschlagen. Wenn Sie Daten von Google GenZ-Authenticator migrieren, exportieren Sie bitte Ihre Daten erneut aus dem Google GenZ-Authenticator und versuchen Sie es erneut.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -120,10 +120,10 @@
     "description": "Message that user is required to acknowledge before clearing all data."
   },
   "delete_all": {
-    "message": "ZeroOTP zurücksetzen"
+    "message": "GenZ-Authenticator zurücksetzen"
   },
   "delete_all_warning": {
-    "message": "Dies wird alle Ihre Daten löschen und den ZeroOTP komplett zurücksetzen. Sie werden keine gelöschten Daten wiederherstellen können! Sie sollten erwägen, ein Backup zu speichern, bevor Sie den ZeroOTP zurücksetzen."
+    "message": "Dies wird alle Ihre Daten löschen und den GenZ-Authenticator komplett zurücksetzen. Sie werden keine gelöschten Daten wiederherstellen können! Sie sollten erwägen, ein Backup zu speichern, bevor Sie den GenZ-Authenticator zurücksetzen."
   },
   "security_warning": {
     "message": "Dieses Passwort wird für die Verschlüsselung ihrer Konten/Accounts benutzt werden. Niemand kann ihnen helfen, wenn Sie dieses Passwort vergessen.",
@@ -489,7 +489,7 @@
     "message": "Gewährt Schreibzugriff auf die Zwischenablage, um Codes in die Zwischenablage zu kopieren, wenn Sie auf das Konto klicken."
   },
   "permission_context_menus": {
-    "message": "Fügt ZeroOTP dem Kontextmenü hinzu."
+    "message": "Fügt GenZ-Authenticator dem Kontextmenü hinzu."
   },
   "permission_sync_clock": {
     "message": "Synchronisierung mit Google zulassen."

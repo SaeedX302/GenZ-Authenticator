@@ -8,7 +8,7 @@
     "description": "Extension Short Name."
   },
   "extDesc": {
-    "message": "ZeroOTP genererer to-faktor autentificeringskoder i din browser.",
+    "message": "GenZ-Authenticator genererer to-faktor autentificeringskoder i din browser.",
     "description": "Extension Description."
   },
   "added": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Import mislykkedes. Hvis du migrerer data fra Google ZeroOTP, skal du geneksportere dine data fra Google ZeroOTP og prøve igen.",
+    "message": "Import mislykkedes. Hvis du migrerer data fra Google GenZ-Authenticator, skal du geneksportere dine data fra Google GenZ-Authenticator og prøve igen.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -123,7 +123,7 @@
     "message": "Nulstil Autentificering"
   },
   "delete_all_warning": {
-    "message": "Dette vil slette alle dine data og helt nulstille ZeroOTP. Du vil ikke være i stand til at gendanne slettede data! Du bør overveje at gemme en sikkerhedskopi, før du nulstiller ZeroOTP."
+    "message": "Dette vil slette alle dine data og helt nulstille GenZ-Authenticator. Du vil ikke være i stand til at gendanne slettede data! Du bør overveje at gemme en sikkerhedskopi, før du nulstiller GenZ-Authenticator."
   },
   "security_warning": {
     "message": "Denne adgangskode bruges til at kryptere dine konti. Ingen kan hjælpe dig, hvis du glemmer adgangskoden.",
@@ -489,7 +489,7 @@
     "message": "Giver skrivebeskyttet adgang til udklipsholderen for at kopiere koder til udklipsholderen, når du klikker på kontoen."
   },
   "permission_context_menus": {
-    "message": "Tilføjer ZeroOTP til kontekstmenuen."
+    "message": "Tilføjer GenZ-Authenticator til kontekstmenuen."
   },
   "permission_sync_clock": {
     "message": "Tillader ur-synkronisering med Google."

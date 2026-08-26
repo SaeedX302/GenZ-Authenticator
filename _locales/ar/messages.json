@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "فشل الاستيراد. إذا كنت تقوم بترحيل البيانات من Google ZeroOTP، الرجاء إعادة تصدير بياناتك من Google ZeroOTP وحاول مرة أخرى.",
+    "message": "فشل الاستيراد. إذا كنت تقوم بترحيل البيانات من Google GenZ-Authenticator، الرجاء إعادة تصدير بياناتك من Google GenZ-Authenticator وحاول مرة أخرى.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -120,10 +120,10 @@
     "description": "Message that user is required to acknowledge before clearing all data."
   },
   "delete_all": {
-    "message": "إعادة تعيين ZeroOTP"
+    "message": "إعادة تعيين GenZ-Authenticator"
   },
   "delete_all_warning": {
-    "message": "سيؤدي هذا إلى حذف جميع بياناتك وإعادة تعيين ZeroOTP بالكامل. لن تتمكن من استعادة أي بيانات محذوفة! يجب مراعاة حفظ نسخة احتياطية قبل إعادة تعيين ZeroOTP."
+    "message": "سيؤدي هذا إلى حذف جميع بياناتك وإعادة تعيين GenZ-Authenticator بالكامل. لن تتمكن من استعادة أي بيانات محذوفة! يجب مراعاة حفظ نسخة احتياطية قبل إعادة تعيين GenZ-Authenticator."
   },
   "security_warning": {
     "message": "هذا الكود الخاص سوف يستخدم لتشفير حسابك.\nلا نقدر على مساعدتك إذا فقدت هذا الكود الخاص.",
@@ -489,7 +489,7 @@
     "message": "يمنح صلاحية الكتابة فقط إلى الحافظة لنسخ الرموز إلى الحافظة عند النقر على الحساب."
   },
   "permission_context_menus": {
-    "message": "يضيف ZeroOTP إلى القائمة."
+    "message": "يضيف GenZ-Authenticator إلى القائمة."
   },
   "permission_sync_clock": {
     "message": "يسمح بمزامنة الساعة مع جوجل."

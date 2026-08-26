@@ -1,6 +1,6 @@
 {
   "extName": {
-    "message": "ZeroOTP",
+    "message": "GenZ-Authenticator",
     "description": "Extension Name."
   },
   "extShortName": {
@@ -8,7 +8,7 @@
     "description": "Extension Short Name."
   },
   "extDesc": {
-    "message": "افزونه ZeroOTP کدهای تأیید هویت دو مرحله‌ای را در مرورگر شما تولید می‌کند.",
+    "message": "افزونه GenZ-Authenticator کدهای تأیید هویت دو مرحله‌ای را در مرورگر شما تولید می‌کند.",
     "description": "Extension Description."
   },
   "added": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "وارد کردن انجام نشد. اگر از Google ZeroOTP مهاجرت می‌کنید، لطفا دوباره از Google ZeroOTP داده خود را خروجی بگیرید و دوباره تلاش کنید.",
+    "message": "وارد کردن انجام نشد. اگر از Google GenZ-Authenticator مهاجرت می‌کنید، لطفا دوباره از Google GenZ-Authenticator داده خود را خروجی بگیرید و دوباره تلاش کنید.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -120,10 +120,10 @@
     "description": "Message that user is required to acknowledge before clearing all data."
   },
   "delete_all": {
-    "message": "بازنشانی ZeroOTP"
+    "message": "بازنشانی GenZ-Authenticator"
   },
   "delete_all_warning": {
-    "message": "این تمام داده‌های شما را حذف کرده و افزونه ZeroOTP را به طور کامل بازنشانی می‌کند. شما بعداً قادر نخواهید بود داده‌های حذف شده را بازیابی کنید! شما باید قبل از بازنشانی افزونه ZeroOTP از داده‌های خود نسخه پشتیبان تهیه کنید."
+    "message": "این تمام داده‌های شما را حذف کرده و افزونه GenZ-Authenticator را به طور کامل بازنشانی می‌کند. شما بعداً قادر نخواهید بود داده‌های حذف شده را بازیابی کنید! شما باید قبل از بازنشانی افزونه GenZ-Authenticator از داده‌های خود نسخه پشتیبان تهیه کنید."
   },
   "security_warning": {
     "message": "این کلمه عبور برای رمزنگاری حساب‌های شما استفاده خواهد شد. اگر این کلمه عبور را فراموش کنید راه دیگری برای بازگردانی آن وجود ندارد.",
@@ -489,7 +489,7 @@
     "message": "وقتی روی حساب کلیک می‌کنید، به کلیپ‌بورد دسترسی فقط نوشتنی برای کپی کردن کدها در کلیپ‌بورد می‌دهد."
   },
   "permission_context_menus": {
-    "message": "ZeroOTP را به منوی زمینه اضافه می کند."
+    "message": "GenZ-Authenticator را به منوی زمینه اضافه می کند."
   },
   "permission_sync_clock": {
     "message": "اجازه همگام سازی ساعت با Google را می دهد."

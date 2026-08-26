@@ -1,14 +1,14 @@
 {
   "extName": {
-    "message": "ZeroOTP",
+    "message": "GenZ-Authenticator",
     "description": "Extension Name."
   },
   "extShortName": {
-    "message": "ZeroOTP",
+    "message": "GenZ-Authenticator",
     "description": "Extension Short Name."
   },
   "extDesc": {
-    "message": "ZeroOTP 在你的瀏覽器中生成兩步驟驗證碼。",
+    "message": "GenZ-Authenticator 在你的瀏覽器中生成兩步驟驗證碼。",
     "description": "Extension Description."
   },
   "added": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "匯入失敗。若您要從Google ZeroOTP搬遷資料，請重新從Google Autenticator匯出資料後再重試",
+    "message": "匯入失敗。若您要從Google GenZ-Authenticator搬遷資料，請重新從Google Autenticator匯出資料後再重試",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -120,10 +120,10 @@
     "description": "Message that user is required to acknowledge before clearing all data."
   },
   "delete_all": {
-    "message": "重設 ZeroOTP"
+    "message": "重設 GenZ-Authenticator"
   },
   "delete_all_warning": {
-    "message": "這會刪除您所有的資料並重設ZeroOTP。您將無法復原任何已刪除的資料！在重設ZeroOTP之前您應備份您的資料。"
+    "message": "這會刪除您所有的資料並重設GenZ-Authenticator。您將無法復原任何已刪除的資料！在重設GenZ-Authenticator之前您應備份您的資料。"
   },
   "security_warning": {
     "message": "您的金鑰將使用此密碼進行加密。請妥善保管，如果遺失您將失去對此金鑰的權限。",

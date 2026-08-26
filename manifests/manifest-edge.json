@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "ZeroOTP: 2FA Client",
+    "name": "GenZ-Authenticator: 2FA Client",
     "version": "8.2.0",
     "default_locale": "en",
     "description": "__MSG_extDesc__",

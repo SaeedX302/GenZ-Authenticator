@@ -1,6 +1,6 @@
 contact_links:
   - name: Feature Request
-    url: https://github.com/ZeroOTP-Extension/ZeroOTP/discussions/new
+    url: https://github.com/GenZ-Authenticatorr/GenZ-Authenticator/discussions/new
     about: Please request features here.
   - name: Translation Issues
     url: https://crowdin.com/project/authenticator-firefox

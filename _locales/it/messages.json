@@ -1,14 +1,14 @@
 {
   "extName": {
-    "message": "ZeroOTP",
+    "message": "GenZ-Authenticator",
     "description": "Extension Name."
   },
   "extShortName": {
-    "message": "ZeroOTP",
+    "message": "GenZ-Authenticator",
     "description": "Extension Short Name."
   },
   "extDesc": {
-    "message": "ZeroOTP genera codici di verifica a due fattori nel tuo browser.",
+    "message": "GenZ-Authenticator genera codici di verifica a due fattori nel tuo browser.",
     "description": "Extension Description."
   },
   "added": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Importazione non riuscita. Se stai portando dati da Google ZeroOTP, riesporta i dati da Google ZeroOTP e prova di nuovo.",
+    "message": "Importazione non riuscita. Se stai portando dati da Google GenZ-Authenticator, riesporta i dati da Google GenZ-Authenticator e prova di nuovo.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -123,7 +123,7 @@
     "message": "Resetta Autenticatore"
   },
   "delete_all_warning": {
-    "message": "Questo eliminerà tutti i tuoi dati e ripristinerà completamente l'ZeroOTP. Non potrai recuperare alcun dato eliminato! Dovresti considerare di salvare un backup, prima di ripristinare l'ZeroOTP."
+    "message": "Questo eliminerà tutti i tuoi dati e ripristinerà completamente l'GenZ-Authenticator. Non potrai recuperare alcun dato eliminato! Dovresti considerare di salvare un backup, prima di ripristinare l'GenZ-Authenticator."
   },
   "security_warning": {
     "message": "Questa password verrà usata per cifrare i tuoi account. Se dimentichi la password non ti potrà aiutare nessuno.",
@@ -489,7 +489,7 @@
     "message": "Concedi l'accesso di sola scrittura agli appunti per copiarvi i codici quando clicchi sul profilo."
   },
   "permission_context_menus": {
-    "message": "Aggiungi ZeroOTPi al menu contestuale."
+    "message": "Aggiungi GenZ-Authenticatori al menu contestuale."
   },
   "permission_sync_clock": {
     "message": "Consenti la sincronizzazione dell'orario con Google."

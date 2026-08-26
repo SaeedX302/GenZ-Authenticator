@@ -1,14 +1,14 @@
 {
   "extName": {
-    "message": "ZeroOTP",
+    "message": "GenZ-Authenticator",
     "description": "Extension Name."
   },
   "extShortName": {
-    "message": "ZeroOTP",
+    "message": "GenZ-Authenticator",
     "description": "Extension Short Name."
   },
   "extDesc": {
-    "message": "ZeroOTP genererar 2-stegs verifieringskoder i din webbläsare.",
+    "message": "GenZ-Authenticator genererar 2-stegs verifieringskoder i din webbläsare.",
     "description": "Extension Description."
   },
   "added": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Import misslyckades. Om du migrerar från Google ZeroOTP; exportera dina data från Google ZeroOTP på nytt och försök igen.",
+    "message": "Import misslyckades. Om du migrerar från Google GenZ-Authenticator; exportera dina data från Google GenZ-Authenticator på nytt och försök igen.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -123,7 +123,7 @@
     "message": "Återställ autentiserare"
   },
   "delete_all_warning": {
-    "message": "Det här kommer att radera alla dina data och återställa ZeroOTP helt. Du kommer inte kunna återskapa några raderade data! Du bör överväga att spara en säkerhetskopia innan du återställer ZeroOTP."
+    "message": "Det här kommer att radera alla dina data och återställa GenZ-Authenticator helt. Du kommer inte kunna återskapa några raderade data! Du bör överväga att spara en säkerhetskopia innan du återställer GenZ-Authenticator."
   },
   "security_warning": {
     "message": "Detta lösenord kommer att användas för att kryptera dina konton. Ingen kan hjälpa dig om du glömmer lösenordet.",
@@ -489,7 +489,7 @@
     "message": "Ger enbart skrivbehörighet till urklipp för att kopiera koder till urklipp när du klickar på kontot."
   },
   "permission_context_menus": {
-    "message": "Lägger till ZeroOTP till snabbvalsmenyn."
+    "message": "Lägger till GenZ-Authenticator till snabbvalsmenyn."
   },
   "permission_sync_clock": {
     "message": "Tillåter klocksynkronisering med Google."

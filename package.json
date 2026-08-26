@@ -1,7 +1,7 @@
 {
-  "name": "zerootp-extension",
+  "name": "GenZ-Authenticator",
   "version": "0.3.0",
-  "description": "改自 ZeroOTP",
+  "description": "改自 GenZ-Authenticator",
   "scripts": {
     "compile": "bash scripts/build.sh firefox",
     "dev:chrome": "npm run pretest && webpack --config ./webpack.watch.js",
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ZeroOTP-Extension/ZeroOTP.git"
+    "url": "git+https://github.com/GenZ-Authenticator/GenZ-Authenticator.git"
   },
-  "author": "ZeroOTP Extension",
+  "author": "GenZ-Authenticator by By TSun x Saeed",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ZeroOTP-Extension/ZeroOTP/issues"
+    "url": "https://github.com/GenZ-Authenticator/GenZ-Authenticator/issues"
   },
-  "homepage": "https://github.com/ZeroOTP-Extension/ZeroOTP#readme",
+  "homepage": "https://github.com/GenZ-Authenticator/GenZ-Authenticator#readme",
   "devDependencies": {
     "@types/argon2-browser": "^1.18.1",
     "@types/chai": "^4.2.14",

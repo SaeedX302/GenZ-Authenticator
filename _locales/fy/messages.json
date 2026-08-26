@@ -1,14 +1,14 @@
 {
   "extName": {
-    "message": "ZeroOTP",
+    "message": "GenZ-Authenticator",
     "description": "Extension Name."
   },
   "extShortName": {
-    "message": "ZeroOTP",
+    "message": "GenZ-Authenticator",
     "description": "Extension Short Name."
   },
   "extDesc": {
-    "message": "ZeroOTP generearret 2-stapsferifikaasjekoades yn jo browser.",
+    "message": "GenZ-Authenticator generearret 2-stapsferifikaasjekoades yn jo browser.",
     "description": "Extension Description."
   },
   "added": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Ymportearjen mislearre. As jo gegevens fan Google ZeroOTP migrearje, eksportearje dan opnij jo gegevens út Google ZeroOTP en probearje it opnij.",
+    "message": "Ymportearjen mislearre. As jo gegevens fan Google GenZ-Authenticator migrearje, eksportearje dan opnij jo gegevens út Google GenZ-Authenticator en probearje it opnij.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -120,10 +120,10 @@
     "description": "Message that user is required to acknowledge before clearing all data."
   },
   "delete_all": {
-    "message": "ZeroOTP opnij inisjalisearje"
+    "message": "GenZ-Authenticator opnij inisjalisearje"
   },
   "delete_all_warning": {
-    "message": "Dit sil al jo gegevens fuortsmite en de ZeroOTP folslein opnij inisjalisearje. Jo binne net yn steat om fuortsmiten gegevens te werstellen! Oerwaagje om in reservekopy te bewarjen eardat jo de ZeroOTP opnij inisjalisearje."
+    "message": "Dit sil al jo gegevens fuortsmite en de GenZ-Authenticator folslein opnij inisjalisearje. Jo binne net yn steat om fuortsmiten gegevens te werstellen! Oerwaagje om in reservekopy te bewarjen eardat jo de GenZ-Authenticator opnij inisjalisearje."
   },
   "security_warning": {
     "message": "Dit wachtwurd wurdt brûkt foar it fersiferjen fan jo accounts. Net ien kin jo helpe as jo it wachtwurd ferjitte.",
@@ -489,7 +489,7 @@
     "message": "Jout allinnich-skriuwrjochttagong ta it klamboerd om koaden nei it klamboerd te kopiearjen wannear’t jo op de account klikke."
   },
   "permission_context_menus": {
-    "message": "Foeget ZeroOTP ta oan kontekstmenu."
+    "message": "Foeget GenZ-Authenticator ta oan kontekstmenu."
   },
   "permission_sync_clock": {
     "message": "Tiidssyngronisaasje mei Google tastean."

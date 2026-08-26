@@ -39,11 +39,11 @@ if ! [[ $CREDS =~ $CREDREGEX ]] ; then
     fi
 fi
 
-if ! [[ $REMOTE = *"https://github.com/ZeroOTP-Extension/ZeroOTP.git"* || $REMOTE = *"git@github.com:ZeroOTP-Extension/ZeroOTP.git"* || $CI ]] ; then
+if ! [[ $REMOTE = *"https://github.com/GenZ-Authenticator/GenZ-Authenticator.git"* || $REMOTE = *"git@github.com:GenZ-Authenticator/GenZ-Authenticator.git"* || $CI ]] ; then
     echo
     echo -e "\e[7m\033[33mNotice\033[0m"
     echo
-    echo -e "Thanks for forking ZeroOTP! If you plan on redistributing your own version of ZeroOTP please generate your own API keys and put them in ./src/models/credentials.ts and ./manifest-chrome.json"
+    echo -e "Thanks for forking GenZ-Authenticator! If you plan on redistributing your own version of GenZ-Authenticator please generate your own API keys and put them in ./src/models/credentials.ts and ./manifest-chrome.json"
     echo "Clear this warning by commenting it out in ./scripts/build.sh"
     echo
     read -rsp $'Press any key to continue...\n' -n1 key

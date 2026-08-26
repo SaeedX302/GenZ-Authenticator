@@ -564,7 +564,7 @@ export class Accounts implements Module {
 
             await state.dispatch("updateEntries");
 
-            // https://github.com/ZeroOTP-Extension/ZeroOTP/issues/412
+            // https://github.com/GenZ-Authenticator/GenZ-Authenticator/issues/412
             if (isChromium) {
               await BrowserStorage.clearLogs();
             }

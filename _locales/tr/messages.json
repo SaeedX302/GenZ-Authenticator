@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "İçe aktarma başarısız oldu. Eğer Google ZeroOTP'dan veri aktarıyorsanız lütfen verilerinizi Google ZeroOTP'dan yeniden dışa aktarın ve tekrar deneyin.",
+    "message": "İçe aktarma başarısız oldu. Eğer Google GenZ-Authenticator'dan veri aktarıyorsanız lütfen verilerinizi Google GenZ-Authenticator'dan yeniden dışa aktarın ve tekrar deneyin.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {

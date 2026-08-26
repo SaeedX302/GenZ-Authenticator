@@ -24,3 +24,5 @@ scripts/test-runner.js
 .agents/
 .qwen-session
 *.tsbuildinfo
+Analysis Report.md
+.obsidian/

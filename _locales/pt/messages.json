@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Import failed. If you are migrating data from Google ZeroOTP, please re-export your data from Google ZeroOTP and try again.",
+    "message": "Import failed. If you are migrating data from Google GenZ-Authenticator, please re-export your data from Google GenZ-Authenticator and try again.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -489,7 +489,7 @@
     "message": "Grants write-only access to the clipboard to copy codes to clipboard when you click on the account."
   },
   "permission_context_menus": {
-    "message": "Adds ZeroOTP to context menu."
+    "message": "Adds GenZ-Authenticator to context menu."
   },
   "permission_sync_clock": {
     "message": "Allows clock sync with Google."

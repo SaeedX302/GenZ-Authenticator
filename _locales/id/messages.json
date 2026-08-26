@@ -4,11 +4,11 @@
     "description": "Extension Name."
   },
   "extShortName": {
-    "message": "ZeroOTP",
+    "message": "GenZ-Authenticator",
     "description": "Extension Short Name."
   },
   "extDesc": {
-    "message": "ZeroOTP menghasilkan kode verifikasi 2 langkah di browser anda.",
+    "message": "GenZ-Authenticator menghasilkan kode verifikasi 2 langkah di browser anda.",
     "description": "Extension Description."
   },
   "added": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Impor gagal. Jika Anda memigrasi data dari Google ZeroOTP, ekspor ulang data Anda dari Google ZeroOTP dan coba lagi.",
+    "message": "Impor gagal. Jika Anda memigrasi data dari Google GenZ-Authenticator, ekspor ulang data Anda dari Google GenZ-Authenticator dan coba lagi.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -120,7 +120,7 @@
     "description": "Message that user is required to acknowledge before clearing all data."
   },
   "delete_all": {
-    "message": "Reset ZeroOTP"
+    "message": "Reset GenZ-Authenticator"
   },
   "delete_all_warning": {
     "message": "Tindakan ini akan menghapus semua data dan mereset ulang Autentikator. Anda tidak dapat mengembalikan data yang sudah terhapus! Pastikan anda membuat Backup terlebih dahulu sebelum mereset ulang Authentikator."
@@ -489,7 +489,7 @@
     "message": "Memberikan akses write-only ke clipboard untuk menyalin kode ke clipboard saat Anda meng-klik akun."
   },
   "permission_context_menus": {
-    "message": "Menambahkan ZeroOTP ke menu konteks."
+    "message": "Menambahkan GenZ-Authenticator ke menu konteks."
   },
   "permission_sync_clock": {
     "message": "Mengizinkan sinkronisasi jam dengan Google."

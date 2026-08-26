@@ -1,14 +1,14 @@
 {
   "extName": {
-    "message": "ZeroOTP",
+    "message": "GenZ-Authenticator",
     "description": "Extension Name."
   },
   "extShortName": {
-    "message": "ZeroOTP",
+    "message": "GenZ-Authenticator",
     "description": "Extension Short Name."
   },
   "extDesc": {
-    "message": "ZeroOTP génère des codes d'authentification à deux facteurs dans votre navigateur.",
+    "message": "GenZ-Authenticator génère des codes d'authentification à deux facteurs dans votre navigateur.",
     "description": "Extension Description."
   },
   "added": {
@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Échec de l'importation. Si vous migrez des données depuis Google ZeroOTP, veuillez ré-exporter vos données depuis Google ZeroOTP et réessayer.",
+    "message": "Échec de l'importation. Si vous migrez des données depuis Google GenZ-Authenticator, veuillez ré-exporter vos données depuis Google GenZ-Authenticator et réessayer.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -489,7 +489,7 @@
     "message": "Donne un accès en écriture seule au presse-papiers pour copier des codes dans le presse-papiers lorsque vous cliquez sur le compte."
   },
   "permission_context_menus": {
-    "message": "Ajoute ZeroOTP au menu contextuel."
+    "message": "Ajoute GenZ-Authenticator au menu contextuel."
   },
   "permission_sync_clock": {
     "message": "Autoriser la synchronisation de l'horloge avec Google."

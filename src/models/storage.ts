@@ -148,7 +148,7 @@ export class BrowserStorage {
   }
 
   // Use for Chrome only.
-  // https://github.com/ZeroOTP-Extension/ZeroOTP/issues/412
+  // https://github.com/GenZ-Authenticator/GenZ-Authenticator/issues/412
   static async clearLogs() {
     const storageLocation = await this.getStorageLocation();
     if (storageLocation === "local") {

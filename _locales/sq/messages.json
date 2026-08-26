@@ -36,7 +36,7 @@
     "description": "Manual Entry."
   },
   "migration_fail": {
-    "message": "Importimi dështoi. Nëse je duke migruar të dhënat nga Google ZeroOTP, ju lutem ri-eksporto të dhënat e tua nga Google ZeroOTP dhe provoni përsëri.",
+    "message": "Importimi dështoi. Nëse je duke migruar të dhënat nga Google GenZ-Authenticator, ju lutem ri-eksporto të dhënat e tua nga Google GenZ-Authenticator dhe provoni përsëri.",
     "description": "Import migration data failed."
   },
   "migration_partly_fail": {
@@ -120,10 +120,10 @@
     "description": "Message that user is required to acknowledge before clearing all data."
   },
   "delete_all": {
-    "message": "Kthe në gjendje fillestare ZeroOTP-in"
+    "message": "Kthe në gjendje fillestare GenZ-Authenticator-in"
   },
   "delete_all_warning": {
-    "message": "Kjo do të fshijë të gjithë plotësisht të dhënat tuaja dhe kthejë ZeroOTP në gjendje fillestare. Ju nuk do të jeni në gjendje të riktheni të dhënat e fshira! Ju duhet të konsideroni ruajtjen e një kopje rezervë përpara rikthimit në gjëndje fillestare të ZeroOTP-it."
+    "message": "Kjo do të fshijë të gjithë plotësisht të dhënat tuaja dhe kthejë GenZ-Authenticator në gjendje fillestare. Ju nuk do të jeni në gjendje të riktheni të dhënat e fshira! Ju duhet të konsideroni ruajtjen e një kopje rezervë përpara rikthimit në gjëndje fillestare të GenZ-Authenticator-it."
   },
   "security_warning": {
     "message": "Ky fjalëkalim do të përdoret për të kriptuar llogarinë tënde. Askush nuk mund tju ndihmojë ju nëse ju harroni fjalëkalimin.",
